@@ -36,7 +36,7 @@ jobs:
         uses: docker/build-push-action@263435318d21b8e681c14492fe198d362a7d2c83 # v6.18.0
         with:
           tags: |
-            ghcr.io/southball/vllm-avx2-docker:latest
+            ghcr.io/createobjectscripting/test/vllm-avx2-docker:latest
           push: true
           context: .
           file: docker/Dockerfile.cpu
@@ -48,6 +48,6 @@ jobs:
 
       - uses: actions/attest-build-provenance@977bb373ede98d70efdf65b84cb5f73e068dcc2a # v3.0.0
         with:
-          subject-name: ghcr.io/southball/vllm-avx2-docker
+          subject-name: ghcr.io/createobjectscripting/test/vllm-avx2-docker
           subject-digest: ${{ steps.push.outputs.digest }}
           push-to-registry: true
